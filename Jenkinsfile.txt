@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_CREDENTIALS = credentials('docker-hub-credentials')  // Jenkins Docker Hub credentials
-        DOCKER_IMAGE = 'dockerusername/myapp'
-        IMAGE_TAG = 'latest'
+        DOCKER_HUB_CREDENTIALS = credentials('docker')  // Jenkins Docker Hub credentials
+        DOCKER_IMAGE = 'https://hub.docker.com/repository/docker/sai2005/image'
+        IMAGE_TAG = 'docker push sai2005/image:tagname'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/dockerusername/myapp.git'
+                git ''
             }
         }
 
