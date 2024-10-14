@@ -3,14 +3,14 @@ pipeline {
 
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('docker')  // Jenkins Docker Hub credentials
-        DOCKER_IMAGE = 'https://hub.docker.com/repository/docker/sai2005/image'
+        DOCKER_IMAGE = 'sai2005/image'
         IMAGE_TAG = 'docker push sai2005/image:tagname'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git ''
+                git 'https://github.com/saiteja-2005/Docker.git'
             }
         }
 
